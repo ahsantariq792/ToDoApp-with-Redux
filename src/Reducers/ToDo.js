@@ -7,7 +7,7 @@ const ToDo = (state = initialstate, action) => {
             const { id, data } = action.payload
             return {
                 ...state, //to get initial state
-                payload: [
+                list: [
                     ...state.list, {
                         id: id,
                         data: data,
