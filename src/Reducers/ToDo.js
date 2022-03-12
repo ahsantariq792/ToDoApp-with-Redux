@@ -14,8 +14,17 @@ const ToDo = (state = initialstate, action) => {
                     }
                 ]
             }
-        // case "DELETE_ITEM": return state = state - 1
-        // case "REMOVE_ITEM": return state = state - 1
+        case "DELETE_ITEM":
+            const newList = state.list.filter((elem) => elem.id !== action.id)
+            return {
+                ...state,
+                list: newList
+            }
+        case "REMOVE_ITEM":
+            return {
+                list: []
+            }
+
         default: return state
 
     }

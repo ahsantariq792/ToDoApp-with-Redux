@@ -8,12 +8,12 @@ export const AddItem = (data) => {
     }
 }
 
-export const DeleteItem = () => {
+export const DeleteItem = (id) => {
     return {
-        type : "DELETE_ITEM"
+        type : "DELETE_ITEM",
+        id
     }
 }
-
 
 export const RemoveItem = () => {
     return {
