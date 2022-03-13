@@ -5,14 +5,16 @@ const ToDo = (state = initialstate, action) => {
     switch (action.type) {
         case "ADD_ITEM":
             const { id, data } = action.payload
-            return {
-                ...state, //to get initial state
-                list: [
-                    ...state.list, {
-                        id: id,
-                        data: data,
-                    }
-                ]
+            if (data.length > 2) {
+                return {
+                    ...state, //to get initial state
+                    list: [
+                        ...state.list, {
+                            id: id,
+                            data: data,
+                        }
+                    ]
+                }
             }
         case "DELETE_ITEM":
             const newList = state.list.filter((elem) => elem.id !== action.id)
